@@ -34,6 +34,8 @@ public class HlavniProgram {
         nakresliObdelnik2(150, 250, Color.black);
         nakresliKolo(Color.black);
 
+        zofkaRid(150);
+
     }
 
 
@@ -214,8 +216,14 @@ public class HlavniProgram {
             zofka.turnRight(15.0);
             zofka.move(10);
              }
+    }
 
-
+    public void zofkaRid(int zovkaRidVlak) {
+        zofka.penUp();
+        zofka.move(zovkaRidVlak);
+        zofka.turnLeft(90);
+        zofka.move(140);
+        zofka.turnLeft(90);
     }
 
 }
