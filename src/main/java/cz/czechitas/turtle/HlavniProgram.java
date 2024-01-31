@@ -17,10 +17,19 @@ public class HlavniProgram {
 
         //Zmrzlina
         nakresliRovnostarnnýTrojuhelnik(300, new Color(68,46,29));
+        posunSeDoLeva(340);
         nakresliKolecko(150, 36, new Color(250,135,184));
 
         //Snehulak
         nakresliSnehulaka(new Color(67,162,211));
+
+        //Masinka
+        posunDoPrava(500);
+        nakresliRovnostarnnýTrojuhelnik(150, Color.black);
+        nakresliObdelnik(120,250, Color.black);
+        nakresliObdelnik2(150,250, Color.black);
+        nakresliKolo( Color.black);
+
     }
 
 
@@ -28,15 +37,17 @@ public class HlavniProgram {
         zofka.setPenColor(barvaCary);
         zofka.move(velikostStrany);
         zofka.turnLeft(120.0);
-       // zofka.penUp();
+        // zofka.penUp();
         zofka.move(velikostStrany);
         zofka.turnLeft(120.0);
-      //  zofka.penDown();
+        //  zofka.penDown();
         zofka.move(velikostStrany);
         zofka.turnLeft(120.0);
+    }
 
+    public void posunSeDoLeva (int vlevo) {
         zofka.penUp();
-        zofka.move(340);
+        zofka.move(vlevo);
         zofka.turnLeft(120);
         zofka.move(169);
     }
@@ -120,6 +131,59 @@ public class HlavniProgram {
 
         }
 
+    public void posunDoPrava(int posunSe) {
+        zofka.penUp();
+        zofka.turnLeft(90);
+        zofka.move(posunSe);
+        zofka.turnRight(30);
+        zofka.penDown();
+    }
+
+        public void nakresliObdelnik (int StranaA, double StranaB, Color barvaCary) {
+            zofka.setPenColor(barvaCary);
+            zofka.turnLeft(30);
+            zofka.penUp();
+            zofka.move(130);
+            zofka.turnLeft(90);
+
+            zofka.penDown();
+            zofka.move(StranaA);
+            zofka.turnRight(90);
+            zofka.move(StranaB);
+            zofka.turnRight(90);
+            zofka.move(StranaA);
+            zofka.turnRight(90);
+            zofka.move(StranaB);
+            zofka.turnRight(90);
+        }
+    public void nakresliObdelnik2 (int StranaA, double StranaB, Color barvaCary) {
+        zofka.setPenColor(barvaCary);
+
+        zofka.turnRight(90);
+        zofka.move(StranaB);
+        zofka.turnLeft(90);
+        zofka.move(StranaB);
+        zofka.turnRight(90);
+        zofka.move(StranaA);
+        zofka.turnRight(90);
+        zofka.move(StranaB);
+        zofka.turnRight(90);
+        zofka.move(StranaA);
+        zofka.turnRight(90);
+    }
+
+    public void nakresliKolo (Color barvaKola) {
+        zofka.turnRight(180);
+
+        zofka.penUp();
+        zofka.move(10);
+        zofka.penDown();
+
+        for (int i = 0; i < 24; i++) {
+            zofka.turnLeft(15.0);
+            zofka.move(20);
+        }
+    }
 
 
     }
