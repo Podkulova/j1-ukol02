@@ -13,22 +13,26 @@ public class HlavniProgram {
 
     public void start() {
         //TODO Tady bude kód pro kreslení želví grafiky.
-        zofka.turnRight(30);
+        zofka.penUp();
+        zofka.turnRight(180);
+        zofka.move(150);
+        zofka.turnLeft(150);
+        zofka.penDown();
 
         //Zmrzlina
-        nakresliRovnostarnnýTrojuhelnik(300, new Color(68,46,29));
-        posunSeDoLeva(340);
-        nakresliKolecko(150, 36, new Color(250,135,184));
+        nakresliRovnostarnnýTrojuhelnik(300, new Color(68, 46, 29)); //300
+        posunSeDoLeva(330);
+        nakresliKolecko(150, 36, new Color(250, 135, 184));
 
         //Snehulak
-        nakresliSnehulaka(new Color(67,162,211));
+        nakresliSnehulaka(new Color(67, 162, 211));
 
         //Masinka
-        posunDoPrava(500);
-        nakresliRovnostarnnýTrojuhelnik(150, Color.black);
-        nakresliObdelnik(120,250, Color.black);
-        nakresliObdelnik2(150,250, Color.black);
-        nakresliKolo( Color.black);
+        posunDoPrava(400);
+        nakresliRovnostarnnýTrojuhelnik(130, Color.black);
+        nakresliObdelnik(120, 250, Color.black);
+        nakresliObdelnik2(150, 250, Color.black);
+        nakresliKolo(Color.black);
 
     }
 
@@ -45,11 +49,11 @@ public class HlavniProgram {
         zofka.turnLeft(120.0);
     }
 
-    public void posunSeDoLeva (int vlevo) {
+    public void posunSeDoLeva(int vlevo) {
         zofka.penUp();
         zofka.move(vlevo);
         zofka.turnLeft(120);
-        zofka.move(169);
+        zofka.move(165);
     }
 
     public void nakresliKolecko(int polomer, int pocetStran, Color barvaKruhu) {
@@ -129,7 +133,7 @@ public class HlavniProgram {
             zofka.move(30);
         }
 
-        }
+    }
 
     public void posunDoPrava(int posunSe) {
         zofka.penUp();
@@ -139,24 +143,25 @@ public class HlavniProgram {
         zofka.penDown();
     }
 
-        public void nakresliObdelnik (int StranaA, double StranaB, Color barvaCary) {
-            zofka.setPenColor(barvaCary);
-            zofka.turnLeft(30);
-            zofka.penUp();
-            zofka.move(130);
-            zofka.turnLeft(90);
+    public void nakresliObdelnik(int StranaA, double StranaB, Color barvaCary) {
+        zofka.setPenColor(barvaCary);
+        zofka.turnLeft(30);
+        zofka.penUp();
+        zofka.move(115);
+        zofka.turnLeft(90);
 
-            zofka.penDown();
-            zofka.move(StranaA);
-            zofka.turnRight(90);
-            zofka.move(StranaB);
-            zofka.turnRight(90);
-            zofka.move(StranaA);
-            zofka.turnRight(90);
-            zofka.move(StranaB);
-            zofka.turnRight(90);
-        }
-    public void nakresliObdelnik2 (int StranaA, double StranaB, Color barvaCary) {
+        zofka.penDown();
+        zofka.move(StranaA);
+        zofka.turnRight(90);
+        zofka.move(StranaB);
+        zofka.turnRight(90);
+        zofka.move(StranaA);
+        zofka.turnRight(90);
+        zofka.move(StranaB);
+        zofka.turnRight(90);
+    }
+
+    public void nakresliObdelnik2(int StranaA, double StranaB, Color barvaCary) {
         zofka.setPenColor(barvaCary);
 
         zofka.turnRight(90);
@@ -172,7 +177,7 @@ public class HlavniProgram {
         zofka.turnRight(90);
     }
 
-    public void nakresliKolo (Color barvaKola) {
+    public void nakresliKolo(Color barvaKola) {
         zofka.turnRight(180);
 
         zofka.penUp();
@@ -183,10 +188,35 @@ public class HlavniProgram {
             zofka.turnLeft(15.0);
             zofka.move(20);
         }
-    }
+
+        zofka.penUp();
+        zofka.turnRight(90);
+        zofka.move(150);
+        zofka.turnLeft(90);
+        zofka.move(35);
+        zofka.penDown();
+
+        for (int i = 0; i < 24; i++) {
+            zofka.turnRight(15.0);
+            zofka.move(10);
+        }
+
+        zofka.penUp();
+        zofka.turnLeft(90);
+        zofka.move(70);
+        zofka.turnLeft(90);
+        zofka.move(43);
+        zofka.turnRight(90);
+
+
+        zofka.penDown();
+        for (int i = 0; i < 24; i++) {
+            zofka.turnRight(15.0);
+            zofka.move(10);
+             }
 
 
     }
 
-
+}
 
