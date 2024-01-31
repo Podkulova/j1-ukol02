@@ -70,7 +70,7 @@ public class HlavniProgram {
         zofka.penDown();
         for (int i = 0; i < 24; i++) {
             zofka.turnRight(15.0);
-            zofka.move(10);
+            zofka.move(12);
         }
 
         for (int i = 0; i < 24; i++) {
@@ -97,8 +97,8 @@ public class HlavniProgram {
         //pravá ruka
 
         zofka.penUp();
-        zofka.turnRight(148); //150
-        zofka.move(190);
+        zofka.turnRight(150); //150
+        zofka.move(198);
 
         zofka.penDown();
         for (int i = 0; i < 24; i++) {
@@ -106,9 +106,23 @@ public class HlavniProgram {
             zofka.move(6);
         }
 
+        zofka.penUp();
+        zofka.turnLeft(180);
+        zofka.move(-10); //80 do prava nebo leva
+        zofka.turnLeft(90);
+        zofka.move(240); //250 zvedá nahoru a dulů
+
+        zofka.penDown();
+        for (int i = 0; i < 24; i++) {
+            zofka.turnRight(15.0);
+            zofka.move(30);
+        }
+
+        }
+
 
 
     }
 
 
-}
+
